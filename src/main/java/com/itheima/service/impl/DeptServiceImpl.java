@@ -6,6 +6,8 @@ import com.itheima.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -18,5 +20,31 @@ public class DeptServiceImpl implements DeptService {
     public List<Dept> list() {
         List<Dept> list = deptMapper.list();
         return list;
+    }
+
+    @Override
+    public int delete(Integer id) {
+        int i = deptMapper.deleteById(id);
+        return i;
+    }
+
+    @Override
+    public void add(Dept dept) {
+        dept.setCreateTime(LocalDateTime.now());
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.insert(dept);
+    }
+
+    @Override
+    public Dept select(int id) {
+        Dept dept = deptMapper.select(id);
+        return dept;
+    }
+
+    @Override
+    public int update(Dept dept) {
+        int u = deptMapper.update(dept);
+//        dept.setUpdateTime(LocalDateTime.now());
+        return u;
     }
 }

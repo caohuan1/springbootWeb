@@ -9,4 +9,12 @@ import java.util.List;
  */
 public interface DeptService {
     List<Dept> list();
+
+    int delete(Integer id);
+
+    void add(Dept dept);
+
+    Dept select(int id);
+
+    int update(Dept dept);
 }
