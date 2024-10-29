@@ -1,6 +1,7 @@
 package com.itheima.mapper;
 
 import com.itheima.pojo.Dept;
+import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 
