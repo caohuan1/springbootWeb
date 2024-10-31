@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.EmpMapper">
+
+    <sql id="commonSelect">
+        select * from emp
+    </sql>
+
+    <!--resultType: 单条记录封装的类型-->
+    <select id="pageHelper" resultType="com.itheima.pojo.Emp">
+        <include refid="commonSelect"/>
+        <where>
+            <if test="name != null and name !=''">
+                name like concat('%', #{name}, '%')
+            </if>
+            <if test="gender != null and gender !=''">
+                and gender = #{gender}
+            </if>
+            <if test="begin != null and end != null ">
+                and entrydate between #{begin} and #{end}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+
+</mapper>

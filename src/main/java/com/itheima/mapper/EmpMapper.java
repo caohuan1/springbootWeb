@@ -4,6 +4,8 @@ import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -20,7 +22,7 @@ public interface EmpMapper {
     List<Emp> page(Integer start, Integer pageSize );
 
     //使用PageHelper包实现分页查询
-    @Select("select * from emp")
-    List<Emp> pageHelper();//注意：此处方法名不能使用page()，也就是不能使用方法重载，否则springboot项目启动会报错
+//    @Select("select * from emp")
+    List<Emp> pageHelper(String name, Short gender, LocalDate begin, LocalDate end);//注意：此处方法名不能使用page()，也就是不能使用方法重载，否则springboot项目启动会报错
 
 }

@@ -9,6 +9,8 @@ import com.itheima.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -33,11 +35,11 @@ public class EmpServiceImpl implements EmpService {
     }
 
     @Override//使用PageHelper实现分页查询
-    public PageBean pageHelper(Integer page, Integer pageSize) {
+    public PageBean pageHelper(Integer page, Integer pageSize, String name, Short gender, LocalDate begin, LocalDate end) {
         //设置分页参数
         PageHelper.startPage(page,pageSize);
         //执行查询
-        List<Emp> empList = empMapper.pageHelper();
+        List<Emp> empList = empMapper.pageHelper(name,gender,begin,end);
         Page<Emp> p = (Page<Emp>) empList;
         //封装为PageBean对象
         PageBean pageBean =new PageBean(p.getTotal(),p.getResult());
