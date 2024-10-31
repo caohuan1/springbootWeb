@@ -18,5 +18,5 @@ public interface EmpService {
                         LocalDate begin,
                         LocalDate end);
 
-    void deleteById(List<Integer> ids);
+    int deleteById(List<Integer> ids);
 }

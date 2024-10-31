@@ -45,8 +45,13 @@ public class EmpController {
     //批量删除
     @DeleteMapping("/{ids}")
     public Result delete(@PathVariable List<Integer> ids){
-        empService.deleteById(ids);
-        return Result.success();
+        int updates = empService.deleteById(ids);
+        if(updates>0){
+            return Result.success();
+        }else {
+            return Result.error("删除失败，没有数据（来自后端响应）！");
+        }
+
     }
 
 }
