@@ -4,6 +4,7 @@ import com.itheima.pojo.PageBean;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 员工管理
@@ -16,4 +17,6 @@ public interface EmpService {
     PageBean pageHelper(Integer page, Integer pageSize,String name, Short gender,
                         LocalDate begin,
                         LocalDate end);
+
+    void deleteById(List<Integer> ids);
 }

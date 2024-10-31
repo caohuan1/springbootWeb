@@ -4,14 +4,14 @@ import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
 import com.itheima.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * 员工管理Controller
@@ -41,4 +41,12 @@ public class EmpController {
         PageBean pageBean =empService.pageHelper(page,pageSize,name,gender,begin,end);
         return Result.success(pageBean);
     }
+
+    //批量删除
+    @DeleteMapping("/{ids}")
+    public Result delete(@PathVariable List<Integer> ids){
+        empService.deleteById(ids);
+        return Result.success();
+    }
+
 }

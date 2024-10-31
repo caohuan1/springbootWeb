@@ -25,4 +25,5 @@ public interface EmpMapper {
 //    @Select("select * from emp")
     List<Emp> pageHelper(String name, Short gender, LocalDate begin, LocalDate end);//注意：此处方法名不能使用page()，也就是不能使用方法重载，否则springboot项目启动会报错
 
+    void deleteByIds(List<Integer> ids) ;
 }
