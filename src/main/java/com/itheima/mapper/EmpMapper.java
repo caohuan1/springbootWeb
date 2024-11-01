@@ -1,6 +1,7 @@
 package com.itheima.mapper;
 
 import com.itheima.pojo.Emp;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -26,4 +27,8 @@ public interface EmpMapper {
     List<Emp> pageHelper(String name, Short gender, LocalDate begin, LocalDate end);//注意：此处方法名不能使用page()，也就是不能使用方法重载，否则springboot项目启动会报错
 
     int deleteByIds(List<Integer> ids) ;
+
+    @Select("insert into emp (id, username, name, gender, image, job, entrydate, dept_id, create_time, update_time)" +
+            "values (#{id},#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{deptId},#{createTime},#{updateTime})")
+    void insert(Emp emp);
 }

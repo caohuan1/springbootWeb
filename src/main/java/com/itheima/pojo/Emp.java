@@ -24,4 +24,48 @@ public class Emp {
     private Integer deptId; //部门ID
     private LocalDateTime createTime; //创建时间
     private LocalDateTime updateTime; //修改时间
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(Short gender) {
+        this.gender = gender;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setJob(Short job) {
+        this.job = job;
+    }
+
+    public void setEntrydate(LocalDate entrydate) {
+        this.entrydate = entrydate;
+    }
+
+    public void setDeptId(Integer deptId) {
+        this.deptId = deptId;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
 }

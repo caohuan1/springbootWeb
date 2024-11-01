@@ -1,11 +1,10 @@
 package com.itheima.controller;
 
+import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
 import com.itheima.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -51,7 +50,13 @@ public class EmpController {
         }else {
             return Result.error("删除失败，没有数据（来自后端响应）！");
         }
+    }
 
+    //新增员工
+    @PostMapping
+    public Result add(@RequestBody Emp emp){
+       empService.add(emp);
+       return Result.success("新增成功！");
     }
 
 }
