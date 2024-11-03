@@ -59,4 +59,16 @@ public class EmpServiceImpl implements EmpService {
         empMapper.insert(emp);
     }
 
+    @Override
+    public Emp selectById(Integer id) {
+        Emp emp = empMapper.selectById(id);
+        return emp;
+    }
+
+    @Override
+    public void update(Emp emp) {
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.update(emp);
+    }
+
 }

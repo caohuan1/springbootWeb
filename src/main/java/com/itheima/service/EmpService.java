@@ -4,7 +4,6 @@ import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -22,4 +21,8 @@ public interface EmpService {
     int deleteById(List<Integer> ids);
 
     void add(Emp emp);
+
+    Emp selectById(Integer id);
+
+    void update(Emp emp);
 }

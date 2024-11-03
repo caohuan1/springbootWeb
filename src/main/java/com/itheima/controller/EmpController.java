@@ -59,4 +59,18 @@ public class EmpController {
        return Result.success("新增成功！");
     }
 
+    //通过ID查询员工
+    @GetMapping("/{id}")
+    public Result selectID(@PathVariable Integer id) {
+        Emp emp = empService.selectById(id);
+        return Result.success(emp);
+    }
+
+    //更新员工
+    @PutMapping()
+    public Result update(@RequestBody Emp emp) {
+        empService.update(emp);
+        return Result.success();
+    }
+
 }
