@@ -34,4 +34,7 @@ public interface EmpMapper {
     Emp selectById(Integer id);
 
     void update(Emp emp);
+
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp getByUsernameAndPassword(Emp emp);
 }
