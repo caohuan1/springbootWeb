@@ -25,6 +25,50 @@ public class Emp {
     private LocalDateTime createTime; //创建时间
     private LocalDateTime updateTime; //修改时间
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Short getGender() {
+        return gender;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public Short getJob() {
+        return job;
+    }
+
+    public LocalDate getEntrydate() {
+        return entrydate;
+    }
+
+    public Integer getDeptId() {
+        return deptId;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
