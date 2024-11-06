@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "/*")
 public class LoginCheckFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -31,7 +31,7 @@ public class LoginCheckFilter implements Filter {
         //4.判断令牌是否存在、如果不存在、返回错误结果(未登录)
         if (!StringUtils.hasLength(jwt)) {
 //            log.info("请求头token为空,返回未登求的信息");
-            Result error = Result.error("NOT LOGIN");
+            Result error = Result.error("NOT_LOGIN");
             //手动转换 对象--json ----->M里巴巴fastJSON
             String notLogin = JSONObject.toJSONString(error);
             resp.getWriter().write(notLogin);

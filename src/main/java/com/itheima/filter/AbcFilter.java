@@ -8,8 +8,8 @@ import java.io.IOException;
 public class AbcFilter implements Filter {
     @Override
     public void doFilter(ServletRequest Request, ServletResponse Response, FilterChain Chain) throws IOException, ServletException {
-        System.out.println("AbcFilter 拦截到了请求，执行拦截前的逻辑...");
+        System.out.println("过滤器【AbcFilter】拦截到了请求，执行拦截前的逻辑...");
         Chain.doFilter(Request,Response);
-        System.out.println("AbcFilter 执行拦截后的逻辑...");
+        System.out.println("过滤器【AbcFilter】 执行拦截后的逻辑...");
     }
 }
