@@ -8,10 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration //配置类
 public class WebConfig implements WebMvcConfigurer {
-
     @Autowired
     private LoginCheckInterceptor loginCheckInterceptor;
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //拦截所有路径，但是除了/login
