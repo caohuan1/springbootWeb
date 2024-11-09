@@ -22,5 +22,9 @@ mybatis:
     #开启mybatis的驼峰命名自动映射开关 a_column ------> aCloumn
     map-underscore-to-camel-case: true
 
+#spring事务管理日志
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: debug
 
 

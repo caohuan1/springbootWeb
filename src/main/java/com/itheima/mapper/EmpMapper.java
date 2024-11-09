@@ -37,4 +37,7 @@ public interface EmpMapper {
 
     @Select("select * from emp where username = #{username} and password = #{password}")
     Emp getByUsernameAndPassword(Emp emp);
+
+    @Select("delete from emp where dept_id = #{deptId}")
+    void deleteByDeptId(Integer deptId);
 }

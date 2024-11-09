@@ -34,7 +34,7 @@ public class DeptController {
     }
     //根据url传入删除的id删除部门
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable int id) {
+    public Result delete(@PathVariable int id) throws Exception {
         int i = deptService.delete(id);
         if (i > 0) {
             return Result.success();

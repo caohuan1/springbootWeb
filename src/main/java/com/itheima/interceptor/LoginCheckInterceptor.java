@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Slf4j
+
 @Component
 public class LoginCheckInterceptor implements HandlerInterceptor {
     @Override //目标资源方法运行前运行, 返回true: 放行, 放回false, 不放行

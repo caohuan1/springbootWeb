@@ -10,7 +10,7 @@ import java.util.List;
 public interface DeptService {
     List<Dept> list();
 
-    int delete(Integer id);
+    int delete(Integer id) throws Exception;
 
     void add(Dept dept);
 
