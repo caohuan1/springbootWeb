@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.aop.MyLog;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
@@ -32,6 +33,7 @@ public class EmpController {
 
     //使用PageHelper实现上面的功能（具体实现见service层）
     @GetMapping     //接收前端两个参数。  参数一：第几页  参数二：每页展示多少行
+    @MyLog
     public Result pageHelper(@RequestParam(defaultValue = "1") Integer page,
                              @RequestParam(defaultValue = "10")Integer pageSize,
                              String name, Short gender,
